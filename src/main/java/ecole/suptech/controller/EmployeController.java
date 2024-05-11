@@ -31,8 +31,8 @@ public class EmployeController {
 	}
 	
 	@DeleteMapping("employes/{id}")
-	public void deleteEmploye(@PathVariable Long id) {
-		employeService.deleteEmploye(id);
+	public boolean deleteEmploye(@PathVariable Long id) {
+		 return employeService.deleteEmploye(id);
 	}
 	@PutMapping("employes")
 	public Employe updateEmploye(@RequestBody Employe employe) {

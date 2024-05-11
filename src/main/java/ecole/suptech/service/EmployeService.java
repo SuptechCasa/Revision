@@ -20,8 +20,9 @@ public class EmployeService {
 		return employeRepository.save(employe);
 	}
 	//Pour supprimer un employé
-	public void deleteEmploye(Long id) {
+	public boolean deleteEmploye(Long id) {
 		employeRepository.deleteById(id);
+		return !employeRepository.existsById(id);
 	}
 	//Pour modifier un employé
 	public Employe updateEmploye(Employe employe) {
